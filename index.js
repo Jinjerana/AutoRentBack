@@ -21,22 +21,9 @@ const invokeAction = async ({ action, contactId, name, email, phone }) => {
 			const deleteContact = await contactsService.removeContact(contactId);
 			return console.log(deleteContact);
 		default:
-			colsole.log('unknown action');
+			console.log('unknown action');
 	}
 };
 
 const { argv } = yargs(process.argv.slice(2));
 invokeAction(argv);
-
-// invokeAction({ action: 'list' });
-// invokeAction({ action: 'getById', contactId: 'qdggE76Jtbfd9eWJHrssH' });
-// invokeAction({
-// 	action: 'add',
-// 	name: 'Luis Armstrong',
-// 	email: 'lui@gmail.com',
-// 	phone: '(211) 820-1635',
-// });
-// invokeAction({
-// 	action: 'deleteById',
-// 	contactId: 'qdggE76Jtbfd9eWJHrssH',
-// });
